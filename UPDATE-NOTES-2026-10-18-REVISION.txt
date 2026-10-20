@@ -1,9 +1,0 @@
-Dr. Maya Reynolds homepage — correction pass
-
-1. Header/footer wordmark now reads “Dr. Maya Reynolds” with “CLINICAL PSYCHOLOGIST” beneath it (replaces THERAPY).
-2. The Areas of Expertise options are uppercase: ANXIETY, PANIC, TRAUMA, BURNOUT, PERFECTIONISM, CHRONIC STRESS, OVERTHINKING, SLEEP DIFFICULTIES, EMOTIONAL REGULATION, SELF-CONNECTION, MINDFULNESS, and …AND MORE.
-3. The specialty card heading is “Therapeutic Approaches” in title case, not all caps.
-4. Contact section includes the supplied address and “Secure telehealth available for clients located in California.”
-5. Existing layouts, styles, and images have not been redesigned in this pass.
-
-Note: The supplied address is reproduced exactly and should be verified before publication.
