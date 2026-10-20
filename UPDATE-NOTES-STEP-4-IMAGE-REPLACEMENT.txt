@@ -1,0 +1,27 @@
+STEP 4 — IMAGE REPLACEMENT (Dr. Maya Reynolds)
+==============================================
+Photos taken from Images_Shortlisted.rar. Filenames use the user's convention
+"Page<N>_<phrase>" where N is the section number the user gave. Each image was cropped
+(no stretching) and resized to the exact pixel size of the slot it replaces, saved as JPG
+under the SAME filename in public/images/ (no code paths changed), with the same very light
+blush grade as before. The labyrinth (section 4) keeps the plum darkening so text stays readable.
+
+User file                                   -> Project file (public/images/)                       Size
+Page 1 _Find steadier ground                -> page1_find-steadier-ground_hero-main.jpg            1365x1246
+Page 1 _Crop for side image (right)         -> page1_find-steadier-ground_hero-right.jpg           1365x1246
+Page2_You can look like you're managing     -> page2_you-can-look-like-youre-managing.jpg          1104x1632
+Page3_Anxiety                               -> page3_..._anxiety-and-panic.jpg                     1104x1632
+Page3_BurnOut                               -> page3_..._burnout-and-perfectionism.jpg             1105x1683
+Page3_Trauma                                -> page3_..._trauma.jpg                                1104x1632
+Page4_You Dont have to Push                 -> page4_you-dont-have-to-keep-pushing-...jpg          2096x1296
+Page5_HOW THERAPY WORKS                     -> page6_practical-support-...jpg  ("How therapy works") 1104x1632
+Page6_Honoring your past                    -> page7_honoring-your-past-...jpg                     2096x1296
+Page8_Therapy that meets you (main)         -> page9_therapy-that-meets-you_right.jpg              2096x1296
+Page8_Crop this image ... (left)            -> page9_therapy-that-meets-you_left.jpg               2096x1296
+(Project filenames keep the original section numbering, which counts one extra block, so
+ the user's Page5/6/8 correspond to project page6/7/9.)
+
+Also updated: alt text for every swapped image, and focal points for sections 2, 3 (anxiety) and 5.
+Low-resolution sources (Anxiety 612px, BurnOut 612px, Trauma 430px wide) are upscaled and will look
+soft on large screens; supply bigger versions with the same names to sharpen them.
+The swirling-sky image's bottom watermark was cropped out.

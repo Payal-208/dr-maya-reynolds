@@ -1,0 +1,23 @@
+STEP 6 — ABOUT + FAQs + NAVIGATION (Dr. Maya Reynolds)
+=======================================================
+Approach: everything lives on the single homepage; menu and footer links scroll to sections (smooth scroll).
+
+NEW SECTIONS (all copy from the profile only)
+  About  (#about-maya)  after the dark quote band: portrait (dr-maya-reynolds-portrait.jpg), bio, her closing line from the profile
+  Our Office (#our-office)  between Specialties and FAQs (built in the previous step)
+  FAQs   (#faqs)        6 accordion questions; FAQPage JSON-LD added in src/app/page.tsx
+
+REVERTED AS REQUESTED
+  Eyebrow    "DR. MAYA REYNOLDS, PSYD · IN-PERSON & SECURE TELEHEALTH ADULT THERAPY"
+  H2         "What brings you to therapy?"      "Our areas of expertise"      "Our specialties include…"
+  Specialties section is back to 4 cards (incl. Therapeutic Approaches); the temporary 3-card CSS override was removed.
+  (H1 keeps the SEO wording: "Anxiety, Trauma & Burnout Therapy in Santa Monica, CA".)
+
+NAVIGATION
+  ABOUT -> #about-maya | Specialties: Anxiety & Panic -> #anxiety-panic, Trauma Therapy -> #trauma-therapy,
+  Burnout & Perfectionism -> #burnout-perfectionism (duplicate/mixed items removed; now 3 unique)
+  Methods: EMDR, Mindfulness-Based Practices, Body-Oriented Techniques, CBT -> #how-therapy-works
+  FAQs -> #faqs | Contact -> #contact-section
+  Mobile menu: same items; labels now "Specialties"/"Methods"; empty duplicate "ABOUT" folder removed.
+  Footer NAVIGATE: Home (#page), About, Our Office, FAQs, Contact are links; footer About block -> #about-maya.
+  Fixed: duplicate DOM ids (#specialties/#methods were reused by menu folders), broken #top link.

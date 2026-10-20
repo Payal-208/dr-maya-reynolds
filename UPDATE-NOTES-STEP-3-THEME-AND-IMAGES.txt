@@ -1,0 +1,52 @@
+STEP 3 — THEME, COLOR PALETTE & IMAGES  (Dr. Maya Reynolds)
+===========================================================
+
+PALETTE — "Golden Hour Calm"
+  Primary    #4A3F6B dusk plum   (buttons, links, wordmark, footer bar)
+             #3B3354 night dusk  (dark quote band)
+  Secondary  #EFDDD3 blush clay  ("How therapy works" section)
+             #EFEAF4 lavender mist (hero, intro, call-to-action sections)
+  Accent     #B5563A terracotta  (emphasis words, check marks, hover states)
+             #E8A87C apricot     (links on dark backgrounds)
+  Neutrals   #FBF7F2 ivory (page background / text on dark)   #2E2A3B ink (body text)
+
+CONTRAST (WCAG)
+  ink on ivory 13.0:1 | plum on ivory 8.9:1 | ivory on night dusk 11.0:1
+  terracotta on ivory 4.5:1 (AA) | ink on blush 10.6:1 | ink on lavender mist ~10.5:1
+  Terracotta text appears only on ivory (heading emphasis words), never on blush.
+
+LIGHT / DARK RULE (unchanged from the original page)
+  light background -> dark ink text;  dark background -> ivory text.
+
+WHERE THE THEME LIVES
+  public/original-assets/site.css    palette tokens: --white-hsl, --black-hsl, --accent-hsl,
+                                     --lightAccent-hsl, --darkAccent-hsl (+ safe* variants)
+  public/original-assets/theme.css   NEW — overrides loaded last (backgrounds, buttons, links,
+                                     accent words, dark band overlay, footer). Edit colors here.
+  public/original-assets/custom.css  hard-coded check marks / nav underline / button underline recolored
+  public/original-assets/dr-maya-reynolds-wordmark.svg   recolored (plum + terracotta)
+  src/app/globals.css, tailwind.config.ts   tokens updated to the new palette
+  src/lib/site-config.ts             theme.css added to the stylesheet list (must stay last)
+
+IMAGES — all 11 original photos replaced with the photos shortlisted by the user (public/images/)
+  Each file is cropped/resized to the exact pixel size of the image it replaced, saved as JPG,
+  and given a very light blush/lavender grade so the photos sit inside the palette.
+  Files are named  pageN_<section phrase>[_slot].jpg  (N = section order on the page).
+  Section                                   File                                                           Source photo
+  1 Hero (left)                             page1_find-steadier-ground_hero-main.jpg                       reaching hands (crop)
+  1 Hero (right sliver)                     page1_find-steadier-ground_hero-right.jpg                      reaching hands (clouds + treetops crop)
+  2 You can look like you're managing       page2_you-can-look-like-youre-managing.jpg                     swirling sky, two people on a hill (watermark cropped out)
+  3 What brings you to therapy? (card 1)    page3_..._anxiety-and-panic.jpg                                person with tangled scribble
+  3 What brings you to therapy? (card 2)    page3_..._trauma.jpg                                           two hands held in support
+  3 What brings you to therapy? (card 3)    page3_..._burnout-and-perfectionism.jpg                        paper head with bandaged brain
+  4 You don't have to keep pushing...       page4_you-dont-have-to-keep-pushing-through-alone.jpg          girl and seagulls (mirrored, plum-darkened for text)
+  6 Practical support / how therapy works   page6_practical-support-with-room-to-understand-....jpg        balanced stones
+  7 Honoring your past...                   page7_honoring-your-past-easing-your-present-....jpg           stone labyrinth by the sea
+  9 Therapy that meets you (left sliver)    page9_therapy-that-meets-you_left.jpg                          hands with flower (left crop)
+  9 Therapy that meets you (right)          page9_therapy-that-meets-you_right.jpg                         hands with flower (main crop)
+  Note: three card photos (anxiety, trauma, burnout) are small source files (<=612px wide);
+  use higher-resolution versions for a final launch. Replace a photo by overwriting its file in
+  public/images/ with the same name and pixel size.
+
+NOT DONE (next step): "Meet Dr. Maya" portrait + bio section.
+Run:  npm install  then  npm run dev  (http://localhost:3000)

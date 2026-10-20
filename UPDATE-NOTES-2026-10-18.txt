@@ -1,0 +1,14 @@
+Dr. Maya Reynolds homepage correction pass
+
+Changes applied from UpdateSuggestion2.txt:
+- Hero word “care” now uses the original-style dark-accent bold italic treatment.
+- “What brings you to therapy?” emphasizes “therapy?” using the original-style dark-accent bold italic treatment.
+- “Our areas of expertise” emphasizes “expertise” with the original-style dark-accent bold italic treatment.
+- Reflection heading emphasizes the ampersand with the same treatment.
+- Service card titles use normal title case rather than all caps.
+- Therapeutic Approaches card heading is uppercase.
+- Footer ABOUT details are split across two lines.
+- Footer CONTACT includes the address supplied by the user and the California telehealth statement.
+
+Note: The address is reproduced exactly as supplied and should be verified before public launch.
+Images are intentionally unchanged in this pass, as requested.
