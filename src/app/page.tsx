@@ -1,8 +1,5 @@
 import OriginalHomepage from '@/components/OriginalHomepage';
-<<<<<<< HEAD
 import SiteInteractions from '@/components/SiteInteractions';
-=======
->>>>>>> ab5be9c288e3995116a8c04b6fed6bb19b1cf69f
 
 // Local-business structured data (from the profile only: no phone/email/fees are invented).
 const structuredData = {
@@ -84,15 +81,18 @@ const faqData = {
 
 /** The visual-clone page; keep this composition stable during the refactor. */
 export default function HomePage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
-      <OriginalHomepage />
-<<<<<<< HEAD
-      <SiteInteractions />
-=======
->>>>>>> ab5be9c288e3995116a8c04b6fed6bb19b1cf69f
-    </>
-  );
+ return (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+    />
+    <OriginalHomepage />
+    <SiteInteractions />
+  </>
+);
 }

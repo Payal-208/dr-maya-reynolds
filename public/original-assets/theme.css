@@ -159,7 +159,6 @@ html { scroll-behavior: smooth; }
 .mr-faq__item summary:hover { color: var(--mr-primary); }
 .mr-faq__item p { margin: 0 0 1.3em; padding-right: 2.4em; color: var(--mr-ink); line-height: 1.7; }
 @media (max-width: 767px) { .mr-faq { grid-template-columns: 1fr; } }
-<<<<<<< HEAD
 
 /* =====================================================================
    RESPONSIVE: tablet + mobile (<= 1024px)
@@ -246,5 +245,3 @@ html { scroll-behavior: smooth; }
   .mr-office__img:not(.mr-office__img--tall) img { aspect-ratio: 4/3; }
   .mr-faq { grid-template-columns: 1fr; }
 }
-=======
->>>>>>> ab5be9c288e3995116a8c04b6fed6bb19b1cf69f
