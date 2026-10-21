@@ -1,0 +1,46 @@
+/* Central design tokens. The reference CSS is re-themed through the tokens in
+   site.css and the overrides in public/original-assets/theme.css. */
+:root {
+  /* "Golden Hour Calm" palette (Step 3) — mirrored in public/original-assets/theme.css */
+  --color-primary: #4A3F6B;      /* dusk plum */
+  --color-primary-deep: #3B3354; /* night dusk */
+  --color-secondary: #EFDDD3;    /* blush clay */
+  --color-secondary-soft: #EFEAF4; /* lavender mist */
+  --color-accent: #B5563A;       /* terracotta */
+  --color-accent-glow: #E8A87C;  /* apricot */
+  --color-paper: #FBF7F2;        /* ivory */
+  --color-ink: #2E2A3B;
+  --font-heading: "beaufort-pro";
+  --font-body: "Muli";
+  --content-max-width: 1200px;
+  --section-spacing: 5rem;
+  --content-gap: 2rem;
+  --button-radius: 0.25rem;
+  --transition-speed: 200ms;
+}
+
+/* Minimal app-level reset; the original page styles are loaded from the supplied CSS. */
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+
+
+/* Static-page fallback: Squarespace normally reveals these background images
+   through its animation/runtime scripts. In the local Next.js recreation those
+   scripts are not fully bootstrapped, so keep the original background image visible. */
+.section-background-content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.section-background img.background-image-fx {
+  visibility: visible !important;
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.section-background-canvas {
+  pointer-events: none;
+}
