@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Dr. Maya Reynolds — "Golden Hour Calm" theme (Step 3)
+   Loaded LAST so it wins over the reference site's CSS.
+
+   Core palette tokens are also set at the source in site.css
+   (--white-hsl, --black-hsl, --accent-hsl, --lightAccent-hsl, --darkAccent-hsl).
+
+   Light-on-dark rule (unchanged from the original site):
+     light backgrounds -> dark ink text   |   dark backgrounds -> ivory text
+   ========================================================================== */
+:root {
+  /* Primary */
+  --mr-primary: #4A3F6B;       /* dusk plum   — buttons, links, wordmark, footer bar */
+  --mr-primary-deep: #3B3354;  /* night dusk  — dark quote band                      */
+  /* Secondary */
+  --mr-secondary: #EFDDD3;     /* blush clay  — "How therapy works" section          */
+  --mr-secondary-soft: #EFEAF4;/* lavender mist — hero / intro / CTA sections        */
+  /* Accent */
+  --mr-accent: #B5563A;        /* terracotta  — emphasis words, check marks, hover   */
+  --mr-accent-glow: #E8A87C;   /* apricot     — links on dark backgrounds            */
+  /* Neutrals */
+  --mr-ivory: #FBF7F2;         /* page background / text on dark                     */
+  --mr-ink: #2E2A3B;           /* body text                                          */
+}
+
+::selection { background: var(--mr-secondary); color: var(--mr-ink); }
+
+/* --- Emphasis words in headings (were sage; now terracotta accent) ------- */
+.sqsrte-text-color--darkAccent { color: var(--mr-accent) !important; }
+
+/* --- Section backgrounds ------------------------------------------------- */
+[data-section-theme="white"]  .section-border { background-color: var(--mr-ivory); }
+[data-section-theme="light"]  .section-border { background-color: var(--mr-secondary-soft); }
+[data-section-theme="bright"] .section-border { background-color: var(--mr-secondary); }
+[data-section-theme="black"]  .section-border { background-color: var(--mr-primary-deep); }
+[data-section-theme="dark"]   .section-border { background-color: var(--mr-primary); }
+
+/* Dark quote band: deepen the left side so ivory text keeps strong contrast */
+[data-section-theme="black"] .section-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(46,42,59,.62) 0%, rgba(46,42,59,.28) 55%, rgba(46,42,59,0) 100%);
+}
+
+/* --- Header -------------------------------------------------------------- */
+.header, .header .header-announcement-bar-wrapper { background-color: var(--mr-ivory); }
+.header-nav-item a, .header-nav-folder-title, .header-actions a { color: var(--mr-ink); }
+.header-nav-item::after { background: var(--mr-accent) !important; }
+.header .header-nav-item--folder .header-nav-folder-content .header-nav-folder-item a:hover {
+  border-bottom: 1px solid var(--mr-accent);
+}
+
+/* --- Buttons & links ------------------------------------------------------ */
+.sqs-button-element--primary,
+.sqs-button-element--secondary {
+  color: var(--mr-primary);
+  border-color: var(--mr-primary);
+  transition: color .25s ease, border-color .25s ease;
+}
+.sqs-button-element--primary:before { border-bottom: 1px solid var(--mr-accent) !important; }
+.sqs-button-element--primary:hover,
+.sqs-button-element--secondary:hover { color: var(--mr-accent); }
+
+.sqs-block-content a:not(.sqs-button-element--primary):not(.sqs-button-element--secondary) {
+  color: var(--mr-primary);
+  text-decoration-color: var(--mr-accent);
+  text-underline-offset: 3px;
+  transition: color .25s ease;
+}
+.sqs-block-content a:not(.sqs-button-element--primary):not(.sqs-button-element--secondary):hover {
+  color: var(--mr-accent);
+}
+
+/* --- Dark band: ivory text, apricot links -------------------------------- */
+[data-section-theme="black"] h1, [data-section-theme="black"] h2,
+[data-section-theme="black"] h3, [data-section-theme="black"] p { color: var(--mr-ivory); }
+[data-section-theme="black"] a { color: var(--mr-accent-glow) !important; }
+
+/* --- Footer --------------------------------------------------------------- */
+#footer-sections { background-color: var(--mr-ivory); color: var(--mr-ink); }
+#footer-sections a { color: var(--mr-primary); }
+#footer-sections a:hover { color: var(--mr-accent); }
+/* bottom legal bar */
+#footer-sections [data-section-theme="dark"] p,
+#footer-sections [data-section-theme="dark"] h1,
+#footer-sections [data-section-theme="dark"] h2,
+#footer-sections [data-section-theme="dark"] h3 { color: var(--mr-ivory) !important; }
+#footer-sections [data-section-theme="dark"] a { color: var(--mr-accent-glow) !important; }
+#footer-sections [data-section-theme="dark"] a:hover { color: var(--mr-ivory) !important; }
+
+/* --- Form / focus states -------------------------------------------------- */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--mr-accent); outline-offset: 3px; }
+
+/* "How therapy works" (blush) section: use brand ink instead of pure black */
+[data-section-theme="bright"] h1, [data-section-theme="bright"] h2, [data-section-theme="bright"] h3,
+[data-section-theme="bright"] h4, [data-section-theme="bright"] p,
+[data-section-theme="bright"] .sqs-button-element--primary { color: var(--mr-ink); }
+
+/* ===== Part 3: "Our Office" section ===== */
+.mr-office { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4vw, 64px); align-items: center; max-width: var(--sqs-site-max-width, 1500px); margin: 0 auto; padding: 0 var(--sqs-site-gutter, 4vw); }
+.mr-office__text h2 { margin: .3em 0 .6em; }
+.mr-office__text p { color: var(--mr-ink); }
+.mr-office__details { list-style: none; margin: 1.6em 0 2em; padding: 0; border-top: 1px solid var(--mr-accent); }
+.mr-office__details li { padding: .85em 0 .85em 1.9em; border-bottom: 1px solid rgba(74,63,107,.18); position: relative; color: var(--mr-ink); line-height: 1.5; }
+.mr-office__details li::before { content: "✓"; position: absolute; left: 0; color: var(--mr-accent); font-weight: 700; }
+.mr-office__gallery { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 1fr 1fr; gap: clamp(10px, 1.4vw, 18px); }
+.mr-office__img { margin: 0; overflow: hidden; background: var(--mr-secondary-soft); }
+.mr-office__img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mr-office__img--tall { grid-row: 1 / span 2; }
+@media (max-width: 767px) {
+  .mr-office { grid-template-columns: 1fr; }
+  .mr-office__gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .mr-office__img--tall { grid-column: 1 / -1; grid-row: auto; }
+  .mr-office__img--tall img { aspect-ratio: 4/3; }
+  .mr-office__img:not(.mr-office__img--tall) img { aspect-ratio: 1/1; }
+}
+.mr-office__text .sqs-block-button-container { text-align: left; }
+
+/* ===== Smooth in-page navigation ===== */
+html { scroll-behavior: smooth; }
+[id="about-maya"], [id="specialties"], [id="how-therapy-works"], [id="our-office"], [id="faqs"], [id="contact-section"],
+#anxiety-panic, #trauma-therapy, #burnout-perfectionism, #therapeutic-approaches { scroll-margin-top: 90px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ===== About (portrait + bio) ===== */
+.mr-about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: center; max-width: var(--sqs-site-max-width, 1500px); margin: 0 auto; padding: 0 var(--sqs-site-gutter, 4vw); }
+.mr-about__portrait { margin: 0; position: relative; }
+.mr-about__portrait img { display: block; width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; object-position: 50% 20%; position: relative; z-index: 1; }
+.mr-about__frame { position: relative; }
+.mr-about__frame::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--mr-accent); z-index: 0; }
+.mr-about__portrait figcaption { position: relative; z-index: 1; margin-top: 40px; display: flex; flex-direction: column; gap: 2px; color: var(--mr-ink); }
+.mr-about__portrait figcaption span { font-size: .85em; letter-spacing: .04em; color: var(--mr-primary); }
+.mr-about__text h2 { margin: .3em 0 .7em; }
+.mr-about__text p { color: var(--mr-ink); }
+.mr-about__quote { margin: 1.6em 0; padding: .2em 0 .2em 1.4em; border-left: 3px solid var(--mr-accent); font-style: italic; color: var(--mr-primary); font-size: 1.15em; line-height: 1.55; }
+.mr-about__facts { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 2em; padding: 0; }
+.mr-about__facts li { padding: .45em 1em; border: 1px solid var(--mr-primary); border-radius: 999px; font-size: .85em; color: var(--mr-primary); }
+.mr-about__text .sqs-block-button-container { text-align: left; }
+@media (max-width: 767px) {
+  .mr-about { grid-template-columns: 1fr; }
+  .mr-about__portrait { max-width: 380px; margin: 0 18px 0 0; }
+  .mr-about__frame { position: relative; }
+.mr-about__frame::before { inset: 14px -14px -14px 14px; }
+}
+
+/* ===== FAQs (accordion) ===== */
+.mr-faq { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: start; max-width: var(--sqs-site-max-width, 1500px); margin: 0 auto; padding: 0 var(--sqs-site-gutter, 4vw); }
+.mr-faq__intro h2 { margin: .3em 0 .6em; }
+.mr-faq__intro p { color: var(--mr-ink); }
+.mr-faq__intro .sqs-block-button-container { text-align: left; margin-top: 1.6em; }
+.mr-faq__list { border-top: 1px solid var(--mr-accent); }
+.mr-faq__item { border-bottom: 1px solid rgba(74,63,107,.22); }
+.mr-faq__item summary { list-style: none; cursor: pointer; padding: 1.15em 2.4em 1.15em 0; position: relative; font-size: 1.12em; line-height: 1.4; color: var(--mr-ink); }
+.mr-faq__item summary::-webkit-details-marker { display: none; }
+.mr-faq__item summary::after { content: "+"; position: absolute; right: .3em; top: 50%; transform: translateY(-50%); color: var(--mr-accent); font-size: 1.5em; transition: transform .25s ease; }
+.mr-faq__item[open] summary::after { content: "–"; }
+.mr-faq__item summary:hover { color: var(--mr-primary); }
+.mr-faq__item p { margin: 0 0 1.3em; padding-right: 2.4em; color: var(--mr-ink); line-height: 1.7; }
+@media (max-width: 767px) { .mr-faq { grid-template-columns: 1fr; } }
+
+/* =====================================================================
+   RESPONSIVE: tablet + mobile (<= 1024px)
+   The Squarespace "fluid engine" grid gives images tiny fixed-height slots on narrow screens, which crops them
+   badly. For the sections that contain photos we stack the blocks and give each photo a proper aspect ratio.
+   ===================================================================== */
+@media (max-width: 1024px) {
+  [data-section-id="670423e206da6c036366fd5f"] .fluid-engine,
+  [data-section-id="670423e206da6c036366fd62"] .fluid-engine,
+  [data-section-id="670459993b2c8501ffcac2d5"] .fluid-engine,
+  [data-section-id="67057567c1d4a434a3992873"] .fluid-engine,
+  [data-section-id="670574db0996216c7acc68e1"] .fluid-engine,
+  [data-section-id="670423e206da6c036366fd6e"] .fluid-engine {
+    display: flex !important; flex-direction: column; align-items: stretch; gap: 16px;
+    max-width: 680px; margin-left: auto; margin-right: auto; padding: 8px 23px;
+  }
+  [data-section-id="670423e206da6c036366fd5f"] .fe-block,
+  [data-section-id="670423e206da6c036366fd62"] .fe-block,
+  [data-section-id="670459993b2c8501ffcac2d5"] .fe-block,
+  [data-section-id="67057567c1d4a434a3992873"] .fe-block,
+  [data-section-id="670574db0996216c7acc68e1"] .fe-block,
+  [data-section-id="670423e206da6c036366fd6e"] .fe-block { grid-area: auto !important; width: 100%; min-width: 0; }
+
+  /* photos: fixed aspect ratios so nothing is squeezed into a sliver */
+  .fe-block:has(.sqs-block-image) { height: auto; }
+  .fe-block:has(.sqs-block-image) .sqs-block, .fe-block:has(.sqs-block-image) .sqs-block-content,
+  .fe-block:has(.sqs-block-image) .fluid-image-component-root, .fe-block:has(.sqs-block-image) .fluid-image-animation-wrapper,
+  .fe-block:has(.sqs-block-image) .fluid-image-container, .fe-block:has(.sqs-block-image) .js-content-mode-element-wrapper,
+  .fe-block:has(.sqs-block-image) .js-content-mode-element { height: 100%; }
+  .fe-block:has(.sqs-block-image) { padding: 0; }
+  .fe-block:has(img[src*="page2_"]),
+  .fe-block:has(img[src*="page3_"]),
+  .fe-block:has(img[src*="page6_"]) { aspect-ratio: 4 / 5; }
+  .fe-block:has(img[src*="page7_"]),
+  .fe-block:has(img[src*="page9_"]) { aspect-ratio: 16 / 10; }
+  img[src*="page2_"], img[src*="page3_"] { object-position: 50% 50% !important; }
+  img[src*="page6_"] { object-position: 50% 92% !important; }
+  img[src*="page7_"] { object-position: 50% 55% !important; }
+  img[src*="page9_"][src*="left"] { object-position: 35% 50% !important; }
+  img[src*="page9_"][src*="right"] { object-position: 65% 50% !important; }
+
+  /* hero: two photos side by side under the text */
+  [data-section-id="670423e206da6c036366fd5f"] .fluid-engine { flex-direction: row; flex-wrap: wrap; align-items: stretch; }
+  [data-section-id="670423e206da6c036366fd5f"] .fe-block { flex: 0 0 100%; }
+  [data-section-id="670423e206da6c036366fd5f"] .fe-block:has(img[src*="page1_"][src*="main"]) { flex: 0 0 calc(64% - 6px); aspect-ratio: 1365 / 1246; }
+  [data-section-id="670423e206da6c036366fd5f"] .fe-block:has(img[src*="page1_"][src*="right"]) { flex: 1 1 0; width: auto; }
+  img[src*="page1_"][src*="main"] { object-position: 50% 45% !important; }
+  img[src*="page1_"][src*="right"] { object-position: 50% 60% !important; }
+
+  /* dark quote band with a photo behind the text */
+  [data-section-id="6705712cbfc15638d2c66167"] .section-background img { object-position: 45% 60% !important; }
+}
+@media (max-width: 767px) {
+  [data-section-id="6705712cbfc15638d2c66167"] { min-height: 460px; }
+}
+
+@media (max-width: 1024px) {
+  /* breathing room: header clearance on the hero, separation between photo/text groups, no forced tall sections */
+  [data-section-id="670423e206da6c036366fd5f"] .fluid-engine { padding-top: 96px; padding-bottom: 28px; }
+  [data-section-id="670423e206da6c036366fd62"] .fluid-engine,
+  [data-section-id="670459993b2c8501ffcac2d5"] .fluid-engine,
+  [data-section-id="67057567c1d4a434a3992873"] .fluid-engine,
+  [data-section-id="670574db0996216c7acc68e1"] .fluid-engine,
+  [data-section-id="670423e206da6c036366fd6e"] .fluid-engine { padding-top: 40px; padding-bottom: 40px; }
+  [data-section-id="670574db0996216c7acc68e1"], [data-section-id="670423e206da6c036366fd6e"],
+  [data-section-id="670423e206da6c036366fd5f"], [data-section-id="670423e206da6c036366fd62"] { min-height: 0 !important; }
+  [data-section-id="670459993b2c8501ffcac2d5"] .fe-block:has(img[src*="page3_"]) { margin-top: 18px; }
+  [data-section-id="670459993b2c8501ffcac2d5"] .fe-block:first-child + .fe-block:has(img) { margin-top: 0; }
+  [data-section-id="67057567c1d4a434a3992873"] .fe-block:has(img) { margin: 6px 0 10px; }
+  [data-section-id="670423e206da6c036366fd62"] .fe-block:has(img) { margin: 6px 0 10px; }
+}
+
+/* tablet refinements */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .fe-block:has(img[src*="page2_"]), .fe-block:has(img[src*="page3_"]), .fe-block:has(img[src*="page6_"]) {
+    max-width: 440px; margin-left: auto; margin-right: auto;
+  }
+}
+@media (max-width: 900px) {
+  .mr-office { grid-template-columns: 1fr; }
+  .mr-office__gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .mr-office__img--tall { grid-column: 1 / -1; grid-row: auto; }
+  .mr-office__img--tall img { aspect-ratio: 4/3; }
+  .mr-office__img:not(.mr-office__img--tall) img { aspect-ratio: 4/3; }
+  .mr-faq { grid-template-columns: 1fr; }
+}
