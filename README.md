@@ -45,3 +45,10 @@ This is a low-risk organization pass intended to preserve the visual clone. The 
 ## Dr. Maya Reynolds content update
 
 The homepage copy has been adapted from the supplied fictional therapist profile while preserving the cloned page structure and stylesheet order. The profile lists the office address exactly as `123th Street 45 W, Santa Monica, CA 90401`; verify this unusual address with the assignment source before publishing. The profile does not supply a phone number, email address, booking URL, fees, insurance information, or hours, so none have been invented. Original image assets and image placements remain for the later visual-redesign step; the old logo image still needs replacement before publication.
+<<<<<<< HEAD
+=======
+
+
+## Step 3 — theme & images
+See `UPDATE-NOTES-STEP-3-THEME-AND-IMAGES.txt`. Palette lives in `public/original-assets/theme.css` (overrides) and the tokens in `site.css`/`globals.css`; images are in `public/images/`.
+>>>>>>> ab5be9c288e3995116a8c04b6fed6bb19b1cf69f

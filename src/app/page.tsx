@@ -1,5 +1,8 @@
 import OriginalHomepage from '@/components/OriginalHomepage';
+<<<<<<< HEAD
 import SiteInteractions from '@/components/SiteInteractions';
+=======
+>>>>>>> ab5be9c288e3995116a8c04b6fed6bb19b1cf69f
 
 // Local-business structured data (from the profile only: no phone/email/fees are invented).
 const structuredData = {
@@ -86,7 +89,10 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <OriginalHomepage />
+<<<<<<< HEAD
       <SiteInteractions />
+=======
+>>>>>>> ab5be9c288e3995116a8c04b6fed6bb19b1cf69f
     </>
   );
 }

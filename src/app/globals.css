@@ -44,3 +44,75 @@ body { margin: 0; }
 .section-background-canvas {
   pointer-events: none;
 }
+<<<<<<< HEAD
+=======
+
+
+/* Mobile-only fixes for the supplied static Squarespace markup. Keep desktop untouched. */
+@media screen and (max-width: 767px) {
+  /* Preserve full image content in inline image blocks instead of cropping it. */
+  .sqs-block-image .image-block-wrapper,
+  .sqs-block-image .image-block-outer-wrapper,
+  .sqs-block-image .image-block-inner,
+  .sqs-block-image .image-inset,
+  .sqs-block-image .image-container {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+  }
+
+  .sqs-block-image img,
+  .sqs-image-shape-container-element {
+    max-width: 100%;
+    object-fit: contain !important;
+  }
+
+  /* The original site's runtime normally activates the root menu folder. */
+  body.header--menu-open .header-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1000;
+  }
+
+  .header-menu-nav-folder[data-folder="root"] {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* The active submenu is nested inside its parent in the saved HTML. */
+  .header-menu-nav-folder .header-menu-nav-folder.header-menu-nav-folder--active {
+    display: flex;
+  }
+
+  /* Squarespace's stretch-image runtime is not loaded in this static clone. */
+  .sqs-block-image img[data-stretch="true"] {
+    width: 100% !important;
+    height: auto !important;
+    inset: auto !important;
+    object-fit: contain !important;
+  }
+}
+
+
+/* Mobile image fallback for saved Squarespace fluid-image blocks.
+   Kept separate from the working mobile navigation styles above. */
+.mr-mobile-image-fallback { display: none; }
+@media screen and (max-width: 767px) {
+  .sqs-block[data-definition-name="website.components.imageFluid"] {
+    height: auto !important; min-height: 0 !important; overflow: visible !important;
+  }
+  .sqs-block[data-definition-name="website.components.imageFluid"] > .sqs-block-content {
+    display: block !important; height: auto !important; min-height: 0 !important; overflow: visible !important;
+  }
+  .sqs-block[data-definition-name="website.components.imageFluid"] .fluid-image-component-root {
+    display: none !important;
+  }
+  .sqs-block[data-definition-name="website.components.imageFluid"] .mr-mobile-image-fallback {
+    display: block !important; width: 100% !important; height: auto !important; max-width: 100% !important;
+    object-fit: contain !important; position: static !important; inset: auto !important;
+    opacity: 1 !important; visibility: visible !important;
+  }
+}
+>>>>>>> ab5be9c288e3995116a8c04b6fed6bb19b1cf69f
